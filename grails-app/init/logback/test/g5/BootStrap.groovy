@@ -2,24 +2,19 @@ package logback.test.g5
 
 class BootStrap {
 
+    TestService testService
     def init = { servletContext ->
 
 
-//        InputStream inputStream = getClass().getClassLoader().getResourceAsStream("logback-config.groovy")
-//
-//        if (inputStream) {
-//            LoggerContext context = (LoggerContext) LoggerFactory.getILoggerFactory()
-//
-//
-//            GafferConfigurator configurator = new GafferConfigurator(context)
-//            String dslText = inputStream.text
-//            configurator.run dslText
-//        }
 
-        //LogbackDSLInitializer.init((LoggerContext) LoggerFactory.getILoggerFactory(), getClass().getClassLoader().getResourceAsStream("logback-config.groovy"))
+// If I initialize with this code it works but with the configurator service it doesn't. Not sure what the difference is.
+//        LoggerContext context = (LoggerContext) LoggerFactory.getILoggerFactory()
+//        LogbackDSLInitializer.init((LoggerContext) LoggerFactory.getILoggerFactory(), getClass().getClassLoader().getResourceAsStream("logback-config.groovy"))
 
 
-        log.debug("works?")
+        log.debug("***************************************** works?")
+        log.info("***************************************** works?")
+        testService.serviceMethod()
 
     }
     def destroy = {

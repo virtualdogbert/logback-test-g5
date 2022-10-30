@@ -37,5 +37,6 @@ if (isDevelopmentMode() && targetDir != null) {
         }
     }
     logger("StackTrace", ERROR, ['FULL_STACKTRACE'], false)
+//    logger("logback.test.g5", DEBUG,['STDOUT'],false)
 }
 root(DEBUG, ['STDOUT'])
